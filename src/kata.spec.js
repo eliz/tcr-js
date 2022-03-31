@@ -30,8 +30,8 @@ function gameOfLife (input) {
     for (let col = 0; col <= lastCol; col++) {
       const numberOfNeighbours = _numberOfNeighboursForCell(row, col)
 
-      if ((_cellIsAliveCount(row, col) && numberOfNeighbours === 2) || (numberOfNeighbours === 3)
-      ) {
+      if ((_cellIsAliveCount(row, col) && numberOfNeighbours === 2)
+        || (numberOfNeighbours === 3)) {
         copyOfInput[row][col] = '*'
       }
     }
