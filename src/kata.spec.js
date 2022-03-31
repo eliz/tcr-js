@@ -15,7 +15,7 @@ function gameOfLife (input) {
 
   let m = 3 // rows
   let n = 3 // columns
-  let array2D = Array(m).fill().map(entry => Array(n))
+  let array2D = Array(m).fill().map(entry => Array(n).fill('??'))
   console.log(array2D);
 
   const lastRow = input.length - 1
