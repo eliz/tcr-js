@@ -34,6 +34,10 @@ function gameOfLife (input) {
         _numberOfNeighboursForCell(row, col) === 2
       ) {
         copyOfInput[row][col] = '*'
+      } else {
+        if (_numberOfNeighboursForCell(row, col) === 3) {
+          console.log('3 neighbours!');
+        }
       }
     }
   }
