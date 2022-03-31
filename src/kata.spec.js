@@ -29,13 +29,14 @@ function gameOfLife (input) {
   for (let row = 0; row <= lastRow; row++) {
     for (let col = 0; col <= lastCol; col++) {
       copyOfInput[row][col] = ' '
+      const numberOfNeighbours = _numberOfNeighboursForCell(row, col)
 
       if (_cellIsAliveCount(row, col) &&
-        _numberOfNeighboursForCell(row, col) === 2
+        numberOfNeighbours === 2
       ) {
         copyOfInput[row][col] = '*'
       } else {
-        if (_numberOfNeighboursForCell(row, col) === 3) {
+        if (numberOfNeighbours === 3) {
           copyOfInput[row][col] = '*'
         }
       }
