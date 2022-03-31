@@ -102,4 +102,16 @@ describe('Game Of Life', () => {
       [' ',' ',' ']]
     );
   })
+
+  it('one cell with 2 neighbours (diagonal + bottom) in a 3 by 3, will live', () => {
+    expect(gameOfLife(
+      [['*',' ',' '],
+      [' ','*',' '],
+      [' ','*',' ']]
+    )).toEqual(
+      [[' ',' ',' '],
+      [' ','*',' '],
+      [' ',' ',' ']]
+    );
+  })
 });
