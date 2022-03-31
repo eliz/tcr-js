@@ -43,29 +43,31 @@ function gameOfLife (input) {
 }
 
 describe('Game Of Life', () => {
-  it('one cell with 0 neighbours in a 3 by 3, will die', () => {
-    expect(gameOfLife(
-      [[' ', ' ', ' '],
-      [' ', '*', ' '],
-      [' ', ' ', ' ']]
-    )).toEqual(
-      [[' ', ' ', ' '],
-      [' ', ' ', ' '],
-      [' ', ' ', ' ']]
-    );
-  })
+  describe('1 neighbour', () => {
+    it('one cell with 0 neighbours in a 3 by 3, will die', () => {
+      expect(gameOfLife(
+        [[' ', ' ', ' '],
+        [' ', '*', ' '],
+        [' ', ' ', ' ']]
+      )).toEqual(
+        [[' ', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' ']]
+      );
+    })
 
-  it('one cell with 1 neighbour in a 3 by 3, will die', () => {
-    expect(gameOfLife(
-      [[' ', ' ', ' '],
-      [' ', '*', '*'],
-      [' ', ' ', ' ']]
-    )).toEqual(
-      [[' ', ' ', ' '],
-      [' ', ' ', ' '],
-      [' ', ' ', ' ']]
-    );
-  })
+    it('one cell with 1 neighbour in a 3 by 3, will die', () => {
+      expect(gameOfLife(
+        [[' ', ' ', ' '],
+        [' ', '*', '*'],
+        [' ', ' ', ' ']]
+      )).toEqual(
+        [[' ', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' ']]
+      );
+    })
+  });
 
   describe('2 neighbours', () => {
 
