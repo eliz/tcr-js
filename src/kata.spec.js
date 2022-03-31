@@ -8,6 +8,7 @@
 
 function gameOfLife (input) {
   const copyOfInput = JSON.parse(JSON.stringify(input));
+  console.log(copyOfInput);
   const lastRow = input.length - 1
   const lastCol = input[0].length - 1
 
