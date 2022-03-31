@@ -7,14 +7,7 @@
 
 
 function gameOfLife (input) {
-  // const copyOfInput = JSON.parse(JSON.stringify(input));
-  // console.log(copyOfInput);
-
-  // const emptyOne = new Array(3).fill(new Array(3).fill(' '))
-  // console.log(emptyOne);
-
   let copyOfInput = Array(input.length).fill().map(entry => Array(input[0].length).fill(' '))
-  console.log(copyOfInput);
 
   const lastRow = input.length - 1
   const lastCol = input[0].length - 1
@@ -36,7 +29,7 @@ function gameOfLife (input) {
 
   for (let row = 0; row <= lastRow; row++) {
     for (let col = 0; col <= lastCol; col++) {
-      copyOfInput[row][col] = ' '
+      // copyOfInput[row][col] = ' '
       const numberOfNeighbours = _numberOfNeighboursForCell(row, col)
 
       if (_cellIsAliveCount(row, col) &&
