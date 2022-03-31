@@ -13,9 +13,7 @@ function gameOfLife (input) {
   // const emptyOne = new Array(3).fill(new Array(3).fill(' '))
   // console.log(emptyOne);
 
-  let m = 3 // rows
-  let n = 3 // columns
-  let copyOfInput = Array(m).fill().map(entry => Array(n).fill(' '))
+  let copyOfInput = Array(input.length).fill().map(entry => Array(input[0].length).fill(' '))
   console.log(copyOfInput);
 
   const lastRow = input.length - 1
