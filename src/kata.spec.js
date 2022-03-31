@@ -37,6 +37,7 @@ function gameOfLife (input) {
       } else {
         if (_numberOfNeighboursForCell(row, col) === 3) {
           console.log('3 neighbours!');
+          copyOfInput[row][col] = '*'
         }
       }
     }
@@ -80,9 +81,9 @@ describe('Game Of Life', () => {
         ['*', '*', '*'],
         [' ', ' ', ' ']]
       )).toEqual(
-        [[' ', ' ', ' '],
+        [[' ', '*', ' '],
         [' ', '*', ' '],
-        [' ', ' ', ' ']]
+        [' ', '*', ' ']]
       );
     })
 
@@ -93,7 +94,7 @@ describe('Game Of Life', () => {
         [' ', '*', ' ']]
       )).toEqual(
         [[' ', ' ', ' '],
-        [' ', '*', ' '],
+        ['*', '*', '*'],
         [' ', ' ', ' ']]
       );
     })
@@ -117,7 +118,7 @@ describe('Game Of Life', () => {
         [' ', '*', ' ']]
       )).toEqual(
         [[' ', ' ', ' '],
-        [' ', '*', ' '],
+        ['*', '*', ' '],
         [' ', ' ', ' ']]
       );
     })
