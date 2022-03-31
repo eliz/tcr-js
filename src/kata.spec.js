@@ -5,9 +5,8 @@
 // 2 will live, 3 will give birth, 4 will die
 
 
-
 function gameOfLife (input) {
-  let copyOfInput = Array(input.length).fill().map(entry => Array(input[0].length).fill(' '))
+  const copyOfInput = Array(input.length).fill().map(entry => Array(input[0].length).fill(' '))
 
   const lastRow = input.length - 1
   const lastCol = input[0].length - 1
@@ -29,7 +28,6 @@ function gameOfLife (input) {
 
   for (let row = 0; row <= lastRow; row++) {
     for (let col = 0; col <= lastCol; col++) {
-      // copyOfInput[row][col] = ' '
       const numberOfNeighbours = _numberOfNeighboursForCell(row, col)
 
       if (_cellIsAliveCount(row, col) &&
