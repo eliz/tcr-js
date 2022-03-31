@@ -67,51 +67,54 @@ describe('Game Of Life', () => {
     );
   })
 
-  it('one cell with 2 neighbours (left+right) in a 3 by 3, will live', () => {
-    expect(gameOfLife(
-      [[' ',' ',' '],
-      ['*','*','*'],
-      [' ',' ',' ']]
-    )).toEqual(
-      [[' ',' ',' '],
-      [' ','*',' '],
-      [' ',' ',' ']]
-    );
-  })
+  describe('2 neighbours', () => {
 
-  it('one cell with 2 neighbours (top+btm) in a 3 by 3, will live', () => {
-    expect(gameOfLife(
-      [[' ','*',' '],
-      [' ','*',' '],
-      [' ','*',' ']]
-    )).toEqual(
-      [[' ',' ',' '],
-      [' ','*',' '],
-      [' ',' ',' ']]
-    );
-  })
-
-  it('one cell with 2 neighbours (diagonal) in a 3 by 3, will live', () => {
-    expect(gameOfLife(
-      [['*',' ',' '],
-      [' ','*',' '],
-      [' ',' ','*']]
-    )).toEqual(
-      [[' ',' ',' '],
-      [' ','*',' '],
-      [' ',' ',' ']]
-    );
-  })
-
-  it('one cell with 2 neighbours (diagonal + bottom) in a 3 by 3, will live', () => {
-    expect(gameOfLife(
-      [['*',' ',' '],
-      [' ','*',' '],
-      [' ','*',' ']]
-    )).toEqual(
-      [[' ',' ',' '],
-      [' ','*',' '],
-      [' ',' ',' ']]
-    );
+    it('one cell with 2 neighbours (left+right) in a 3 by 3, will live', () => {
+      expect(gameOfLife(
+        [[' ',' ',' '],
+        ['*','*','*'],
+        [' ',' ',' ']]
+      )).toEqual(
+        [[' ',' ',' '],
+        [' ','*',' '],
+        [' ',' ',' ']]
+      );
+    })
+  
+    it('one cell with 2 neighbours (top+btm) in a 3 by 3, will live', () => {
+      expect(gameOfLife(
+        [[' ','*',' '],
+        [' ','*',' '],
+        [' ','*',' ']]
+      )).toEqual(
+        [[' ',' ',' '],
+        [' ','*',' '],
+        [' ',' ',' ']]
+      );
+    })
+  
+    it('one cell with 2 neighbours (diagonal) in a 3 by 3, will live', () => {
+      expect(gameOfLife(
+        [['*',' ',' '],
+        [' ','*',' '],
+        [' ',' ','*']]
+      )).toEqual(
+        [[' ',' ',' '],
+        [' ','*',' '],
+        [' ',' ',' ']]
+      );
+    })
+  
+    it('one cell with 2 neighbours (diagonal + bottom) in a 3 by 3, will live', () => {
+      expect(gameOfLife(
+        [['*',' ',' '],
+        [' ','*',' '],
+        [' ','*',' ']]
+      )).toEqual(
+        [[' ',' ',' '],
+        [' ','*',' '],
+        [' ',' ',' ']]
+      );
+    })
   })
 });
