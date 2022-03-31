@@ -7,7 +7,7 @@
 
 
 function gameOfLife (input) {
-  const copyOfInput = JSON.parse(JSON.stringify(input));
+  // const copyOfInput = JSON.parse(JSON.stringify(input));
   // console.log(copyOfInput);
 
   // const emptyOne = new Array(3).fill(new Array(3).fill(' '))
@@ -15,8 +15,8 @@ function gameOfLife (input) {
 
   let m = 3 // rows
   let n = 3 // columns
-  let array2D = Array(m).fill().map(entry => Array(n).fill('??'))
-  console.log(array2D);
+  let copyOfInput = Array(m).fill().map(entry => Array(n).fill(' '))
+  console.log(copyOfInput);
 
   const lastRow = input.length - 1
   const lastCol = input[0].length - 1
