@@ -117,4 +117,20 @@ describe('Game Of Life', () => {
       );
     })
   })
+
+  describe.skip('3 neighbours', () => {
+
+    it('one dead cell with 3 neighbours in a 3 by 3, will become alive', () => {
+      expect(gameOfLife(
+        [[' ', ' ', ' '],
+        ['*', ' ', '*'],
+        [' ', '*', ' ']]
+      )).toEqual(
+        [[' ', ' ', ' '],
+        [' ', '*', ' '],
+        [' ', ' ', ' ']]
+      );
+    })
+
+  })
 });
