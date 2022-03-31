@@ -9,6 +9,10 @@
 function gameOfLife (input) {
   const copyOfInput = JSON.parse(JSON.stringify(input));
   console.log(copyOfInput);
+
+  const emptyOne = new Array(3).fill(new Array(3).fill(' '))
+  console.log(emptyOne);
+
   const lastRow = input.length - 1
   const lastCol = input[0].length - 1
 
