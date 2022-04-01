@@ -257,7 +257,7 @@ describe('Game Of Life', () => {
         );
       })
 
-      it.only('glier', () => {
+      it('glier', () => {
         expect(gameOfLife(
           [[' ', '*', ' ', ' ', ' '],
           [' ', ' ', '*', ' ', ' '],
