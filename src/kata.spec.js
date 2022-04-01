@@ -6,7 +6,7 @@
 
 
 function _gameOfLife (input) {
-  const copyOfInput = Array(input.length).fill().map(entry => Array(input[0].length).fill(' '))
+  const nextGeneration = Array(input.length).fill().map(entry => Array(input[0].length).fill(' '))
 
   const lastRow = input.length - 1
   const lastCol = input[0].length - 1
@@ -32,12 +32,12 @@ function _gameOfLife (input) {
 
       if ((_cellIsAliveCount(row, col) && numberOfNeighbours === 2)
         || (numberOfNeighbours === 3)) {
-        copyOfInput[row][col] = '*'
+        nextGeneration[row][col] = '*'
       }
     }
   }
 
-  return copyOfInput;
+  return nextGeneration;
 }
 
 function gameOfLife (input, numberOfGeneration = 1) {
@@ -229,3 +229,7 @@ describe('Game Of Life', () => {
 });
 
 // https://playgameoflife.com/
+
+// What can we do better next round
+// - Use 0 & 1 instead of string manipulation
+// -
