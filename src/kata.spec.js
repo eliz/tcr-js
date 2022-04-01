@@ -40,10 +40,18 @@ function _gameOfLife (input) {
   return nextGeneration;
 }
 
+function _print (input) {
+  console.log('==============================')
+  input.forEach(item => {
+    console.log(item)
+  })
+  console.log('==============================')
+}
+
 function gameOfLife (input, numberOfGeneration = 1) {
   for (let i = 0; i < numberOfGeneration; i++) {
     input = _gameOfLife(input)
-    console.log(input)
+    _print(input)
   }
   return input
 }
