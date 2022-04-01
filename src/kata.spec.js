@@ -41,7 +41,7 @@ function _gameOfLife (input) {
 }
 
 function _print (input) {
-  let output
+  let output = ''
   output += '==============================\n'
   input.forEach(item => {
     item.forEach(i => {
