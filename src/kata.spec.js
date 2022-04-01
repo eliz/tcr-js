@@ -213,7 +213,7 @@ describe('Game Of Life', () => {
         );
       })
 
-      it.only('3 generations', () => {
+      it('3 generations', () => {
         expect(gameOfLife(
           [[' ', ' ', ' ', ' ', ' '],
           [' ', ' ', '*', '*', '*'],
