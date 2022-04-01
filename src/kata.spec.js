@@ -48,7 +48,7 @@ function _drawLine (input) {
   }
   output += '\n'
 
-  return input
+  return output
 }
 
 function _print (input) {
