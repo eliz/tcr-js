@@ -5,7 +5,7 @@
 // 2 will live, 3 will give birth, 4 will die
 
 
-function gameOfLife (input) {
+function _gameOfLife (input) {
   const copyOfInput = Array(input.length).fill().map(entry => Array(input[0].length).fill(' '))
 
   const lastRow = input.length - 1
@@ -38,6 +38,13 @@ function gameOfLife (input) {
   }
 
   return copyOfInput;
+}
+
+function gameOfLife (input, numberOfGeneration = 1) {
+  for (let i = 0; i < numberOfGeneration; i++) {
+    input = _gameOfLife(input)
+  }
+  return input
 }
 
 describe('Game Of Life', () => {
