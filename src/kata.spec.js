@@ -168,8 +168,8 @@ describe('Game Of Life', () => {
       })
     })
 
-    describe('2 generation', () => {
-      it('', () => {
+    describe('multi generation', () => {
+      it('2 generation', () => {
         expect(gameOfLife(
           [[' ', '*', ' '],
           [' ', '*', ' '],
