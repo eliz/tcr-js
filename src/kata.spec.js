@@ -168,7 +168,7 @@ describe('Game Of Life', () => {
       })
     })
 
-    describe.skip('2 generation', () => {
+    describe('2 generation', () => {
       it('', () => {
         expect(gameOfLife(
           [[' ', '*', ' '],
