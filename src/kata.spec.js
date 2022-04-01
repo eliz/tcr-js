@@ -43,6 +43,7 @@ function _gameOfLife (input) {
 function gameOfLife (input, numberOfGeneration = 1) {
   for (let i = 0; i < numberOfGeneration; i++) {
     input = _gameOfLife(input)
+    console.log(input)
   }
   return input
 }
@@ -181,7 +182,7 @@ describe('Game Of Life', () => {
         );
       })
 
-      it('3 generations', () => {
+      it.only('3 generations', () => {
         expect(gameOfLife(
           [[' ', ' ', ' ', ' ', ' '],
           [' ', ' ', '*', '*', '*'],
