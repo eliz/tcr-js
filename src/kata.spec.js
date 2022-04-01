@@ -232,4 +232,6 @@ describe('Game Of Life', () => {
 
 // What can we do better next round
 // - Use 0 & 1 instead of string manipulation
-// -
+// - Test for glider type
+// - How to display: printing for each generation
+// - Borders? What other representation to use if we don't use 2D array.
