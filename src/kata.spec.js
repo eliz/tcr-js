@@ -58,7 +58,11 @@ function _print (input) {
 
   input.forEach(item => {
     item.forEach(i => {
-      output += i
+      if (i === '*') {
+        output += '1'
+      } else {
+        output += '0'
+      }
     })
     output += '\n'
   })
