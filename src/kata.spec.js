@@ -146,7 +146,7 @@ describe('Game Of Life', () => {
 
   })
 
-  describe.skip('4 neighbours', () => {
+  describe('4 neighbours', () => {
     it('one live cell with 4 neighbours in a 3 by 3, will die', () => {
       expect(gameOfLife(
         [[' ', '*', ' '],
