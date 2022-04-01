@@ -257,7 +257,7 @@ describe('Game Of Life', () => {
         );
       })
 
-      it('glier', () => {
+      it('glider', () => {
         expect(gameOfLife(
           [[' ', '*', ' ', ' ', ' '],
           [' ', ' ', '*', ' ', ' '],
