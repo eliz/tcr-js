@@ -41,11 +41,13 @@ function _gameOfLife (input) {
 }
 
 function _print (input) {
-  console.log('==============================')
+  let output
+  output += '==============================\n'
   input.forEach(item => {
-    console.log(item)
+    output += item
   })
-  console.log('==============================')
+  output += '==============================\n'
+  console.log(output)
 }
 
 function gameOfLife (input, numberOfGeneration = 1) {
