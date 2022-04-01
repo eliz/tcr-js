@@ -257,7 +257,7 @@ describe('Game Of Life', () => {
         );
       })
 
-      it.skip('glier', () => {
+      it.only('glier', () => {
         expect(gameOfLife(
           [[' ', '*', ' ', ' ', ' '],
           [' ', ' ', '*', ' ', ' '],
