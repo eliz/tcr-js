@@ -40,16 +40,30 @@ function _gameOfLife (input) {
   return nextGeneration;
 }
 
+function _drawLine (input) {
+  let output = ''
+
+  for (let i = 0; i < input[0].length; i++) {
+    output += '='
+  }
+  output += '\n'
+
+  return input
+}
+
 function _print (input) {
   let output = ''
-  output += '==============================\n'
+
+  output += _drawLine(input)
+
   input.forEach(item => {
     item.forEach(i => {
       output += i
     })
     output += '\n'
   })
-  output += '==============================\n'
+  output += _drawLine(input)
+
   console.log(output)
 }
 
