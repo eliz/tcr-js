@@ -170,7 +170,7 @@ describe('Game Of Life', () => {
     })
 
     describe('multi generation', () => {
-      it('2 generation', () => {
+      it.only('2 generation', () => {
         expect(gameOfLife(
           [[' ', '*', ' '],
           [' ', '*', ' '],
@@ -182,7 +182,7 @@ describe('Game Of Life', () => {
         );
       })
 
-      it.only('3 generations', () => {
+      it('3 generations', () => {
         expect(gameOfLife(
           [[' ', ' ', ' ', ' ', ' '],
           [' ', ' ', '*', '*', '*'],
