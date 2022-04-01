@@ -44,7 +44,10 @@ function _print (input) {
   let output
   output += '==============================\n'
   input.forEach(item => {
-    output += item
+    item.forEach(i => {
+      output += i
+    })
+    output += '\n'
   })
   output += '==============================\n'
   console.log(output)
