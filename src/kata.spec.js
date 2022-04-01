@@ -41,122 +41,124 @@ function gameOfLife (input) {
 }
 
 describe('Game Of Life', () => {
-  describe('1 neighbour', () => {
-    it('one cell with 0 neighbours in a 3 by 3, will die', () => {
-      expect(gameOfLife(
-        [[' ', ' ', ' '],
-        [' ', '*', ' '],
-        [' ', ' ', ' ']]
-      )).toEqual(
-        [[' ', ' ', ' '],
-        [' ', ' ', ' '],
-        [' ', ' ', ' ']]
-      );
+  describe('3 by 3', () => {
+    describe('1 neighbour', () => {
+      it('one cell with 0 neighbours in a 3 by 3, will die', () => {
+        expect(gameOfLife(
+          [[' ', ' ', ' '],
+          [' ', '*', ' '],
+          [' ', ' ', ' ']]
+        )).toEqual(
+          [[' ', ' ', ' '],
+          [' ', ' ', ' '],
+          [' ', ' ', ' ']]
+        );
+      })
+
+      it('one cell with 1 neighbour in a 3 by 3, will die', () => {
+        expect(gameOfLife(
+          [[' ', ' ', ' '],
+          [' ', '*', '*'],
+          [' ', ' ', ' ']]
+        )).toEqual(
+          [[' ', ' ', ' '],
+          [' ', ' ', ' '],
+          [' ', ' ', ' ']]
+        );
+      })
+    });
+
+    describe('2 neighbours', () => {
+
+      it('one cell with 2 neighbours (left+right) in a 3 by 3, will live', () => {
+        expect(gameOfLife(
+          [[' ', ' ', ' '],
+          ['*', '*', '*'],
+          [' ', ' ', ' ']]
+        )).toEqual(
+          [[' ', '*', ' '],
+          [' ', '*', ' '],
+          [' ', '*', ' ']]
+        );
+      })
+
+      it('one cell with 2 neighbours (top+btm) in a 3 by 3, will live', () => {
+        expect(gameOfLife(
+          [[' ', '*', ' '],
+          [' ', '*', ' '],
+          [' ', '*', ' ']]
+        )).toEqual(
+          [[' ', ' ', ' '],
+          ['*', '*', '*'],
+          [' ', ' ', ' ']]
+        );
+      })
+
+      it('one cell with 2 neighbours (diagonal) in a 3 by 3, will live', () => {
+        expect(gameOfLife(
+          [['*', ' ', ' '],
+          [' ', '*', ' '],
+          [' ', ' ', '*']]
+        )).toEqual(
+          [[' ', ' ', ' '],
+          [' ', '*', ' '],
+          [' ', ' ', ' ']]
+        );
+      })
+
+      it('one cell with 2 neighbours (diagonal + bottom) in a 3 by 3, will live', () => {
+        expect(gameOfLife(
+          [['*', ' ', ' '],
+          [' ', '*', ' '],
+          [' ', '*', ' ']]
+        )).toEqual(
+          [[' ', ' ', ' '],
+          ['*', '*', ' '],
+          [' ', ' ', ' ']]
+        );
+      })
     })
 
-    it('one cell with 1 neighbour in a 3 by 3, will die', () => {
-      expect(gameOfLife(
-        [[' ', ' ', ' '],
-        [' ', '*', '*'],
-        [' ', ' ', ' ']]
-      )).toEqual(
-        [[' ', ' ', ' '],
-        [' ', ' ', ' '],
-        [' ', ' ', ' ']]
-      );
-    })
-  });
+    describe('3 neighbours', () => {
 
-  describe('2 neighbours', () => {
+      it('one dead cell with 3 neighbours in a 3 by 3, will become alive', () => {
+        expect(gameOfLife(
+          [[' ', ' ', ' '],
+          [' ', '*', '*'],
+          [' ', '*', ' ']]
+        )).toEqual(
+          [[' ', ' ', ' '],
+          [' ', '*', '*'],
+          [' ', '*', '*']]
+        );
+      })
 
-    it('one cell with 2 neighbours (left+right) in a 3 by 3, will live', () => {
-      expect(gameOfLife(
-        [[' ', ' ', ' '],
-        ['*', '*', '*'],
-        [' ', ' ', ' ']]
-      )).toEqual(
-        [[' ', '*', ' '],
-        [' ', '*', ' '],
-        [' ', '*', ' ']]
-      );
-    })
+      it('one dead cell with 3 neighbours in a 3 by 3, will become alive', () => {
+        expect(gameOfLife(
+          [[' ', '*', ' '],
+          [' ', ' ', '*'],
+          [' ', '*', ' ']]
+        )).toEqual(
+          [[' ', ' ', ' '],
+          [' ', '*', '*'],
+          [' ', ' ', ' ']]
+        );
+      })
 
-    it('one cell with 2 neighbours (top+btm) in a 3 by 3, will live', () => {
-      expect(gameOfLife(
-        [[' ', '*', ' '],
-        [' ', '*', ' '],
-        [' ', '*', ' ']]
-      )).toEqual(
-        [[' ', ' ', ' '],
-        ['*', '*', '*'],
-        [' ', ' ', ' ']]
-      );
     })
 
-    it('one cell with 2 neighbours (diagonal) in a 3 by 3, will live', () => {
-      expect(gameOfLife(
-        [['*', ' ', ' '],
-        [' ', '*', ' '],
-        [' ', ' ', '*']]
-      )).toEqual(
-        [[' ', ' ', ' '],
-        [' ', '*', ' '],
-        [' ', ' ', ' ']]
-      );
-    })
-
-    it('one cell with 2 neighbours (diagonal + bottom) in a 3 by 3, will live', () => {
-      expect(gameOfLife(
-        [['*', ' ', ' '],
-        [' ', '*', ' '],
-        [' ', '*', ' ']]
-      )).toEqual(
-        [[' ', ' ', ' '],
-        ['*', '*', ' '],
-        [' ', ' ', ' ']]
-      );
-    })
-  })
-
-  describe('3 neighbours', () => {
-
-    it('one dead cell with 3 neighbours in a 3 by 3, will become alive', () => {
-      expect(gameOfLife(
-        [[' ', ' ', ' '],
-        [' ', '*', '*'],
-        [' ', '*', ' ']]
-      )).toEqual(
-        [[' ', ' ', ' '],
-        [' ', '*', '*'],
-        [' ', '*', '*']]
-      );
-    })
-
-    it('one dead cell with 3 neighbours in a 3 by 3, will become alive', () => {
-      expect(gameOfLife(
-        [[' ', '*', ' '],
-        [' ', ' ', '*'],
-        [' ', '*', ' ']]
-      )).toEqual(
-        [[' ', ' ', ' '],
-        [' ', '*', '*'],
-        [' ', ' ', ' ']]
-      );
-    })
-
-  })
-
-  describe('4 neighbours', () => {
-    it('one live cell with 4 neighbours in a 3 by 3, will die', () => {
-      expect(gameOfLife(
-        [[' ', '*', ' '],
-        ['*', '*', '*'],
-        [' ', '*', ' ']]
-      )).toEqual(
-        [['*', '*', '*'],
-        ['*', ' ', '*'],
-        ['*', '*', '*']]
-      );
+    describe('4 neighbours', () => {
+      it('one live cell with 4 neighbours in a 3 by 3, will die', () => {
+        expect(gameOfLife(
+          [[' ', '*', ' '],
+          ['*', '*', '*'],
+          [' ', '*', ' ']]
+        )).toEqual(
+          [['*', '*', '*'],
+          ['*', ' ', '*'],
+          ['*', '*', '*']]
+        );
+      })
     })
   })
 });
